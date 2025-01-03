@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 2.5em;
+      margin-top: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    .share {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+    }
+
+    .share:hover {
+      background: #ff3f2e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎉 ¡Feliz Cumpleaños! 🎉</h1>
+    <div class="message">
+      <p>Querido [Nombre],</p>
+      <p>Espero que este día esté lleno de alegría, amor y sorpresas increíbles. 🥳</p>
+      <p>¡Que cumplas muchos años más llenos de éxitos y felicidad! 🎂</p>
+    </div>
+    <a href="#" class="share" onclick="shareLink()">Compartir Mensaje</a>
+    <div class="footer">
+      &copy; 2025 - Mensajes de Cumpleaños
+    </div>
+  </div>
+
+  <script>
+    // Función para compartir el enlace en móviles (Web Share API)
+    function shareLink() {
+      if (navigator.share) {
+        navigator.share({
+          title: "Feliz Cumpleaños",
+          text: "Mira este mensaje especial de cumpleaños 🎉",
+          url: window.location.href
+        }).then(() => {
+          console.log("Mensaje compartido con éxito");
+        }).catch(console.error);
+      } else {
+        alert("La funcionalidad de compartir no está disponible en tu dispositivo.");
+      }
+    }
+  </script>
+</body>
+</html>
